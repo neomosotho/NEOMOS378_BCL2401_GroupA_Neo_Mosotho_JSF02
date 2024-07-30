@@ -1,4 +1,4 @@
-<!-- src/routes/Home.svelte -->
+<!-- src/pages/Home.svelte -->
 <script>
     import { onMount } from 'svelte';
     import { fetchCategories, fetchProducts } from '../api.js';
