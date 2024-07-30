@@ -5,6 +5,7 @@
     import ProductGrid from '../components/ProductGrid.svelte';
     import FilterSort from '../components/FilterSort.svelte';
     import ProductModal from '../components/ProductModal.svelte';
+    import { navigate } from 'svelte-routing';
   
     let products = [];
     let filteredProducts = [];
@@ -55,15 +56,9 @@
       filterAndSortProducts();
     }
   
-    async function viewProductDetails(event) {
-      try {
-        const productId = event.detail;
-        singleProduct = await fetchSingleProduct(productId);
-        modalOpen = true;
-      } catch (error) {
-        console.error('Error fetching product:', error);
-        alert('Failed to load product details. Please try again.');
-      }
+    function viewProductDetails(event) {
+      const productId = event.detail;
+      navigate(`/product/${productId}`);
     }
   
     $: {

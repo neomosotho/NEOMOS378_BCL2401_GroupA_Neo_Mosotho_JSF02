@@ -4,7 +4,7 @@
     import { createEventDispatcher } from 'svelte';
   
     export let loading = true;
-    export let products = []; // Changed from filteredProducts to products
+    export let products = []; 
   
     const dispatch = createEventDispatcher();
   
@@ -19,7 +19,7 @@
         Loading products...
       </div>
     {:else}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {#each products as product (product.id)}
           <ProductCard {product} on:viewDetails={() => viewDetails(product.id)} />
         {/each}

@@ -6,7 +6,7 @@
     const dispatch = createEventDispatcher();
   
     function viewDetails() {
-      dispatch('viewDetails');
+      dispatch('viewDetails', product.id);
     }
   
     let isFavorite = false;
@@ -17,7 +17,7 @@
   </script>
   
   <div class="bg-white rounded-lg shadow-md p-4">
-    <img src={product.image} alt="Product Image" class="w-full h-48 object-cover">
+    <img src={product.image} alt="Product Image" class="w-400 h-40 object-cover">
     <div class="mt-4">
       <h2 class="text-lg font-bold text-gray-800">{product.title}</h2>
       <p class="text-gray-600">${product.price.toFixed(2)}</p>
