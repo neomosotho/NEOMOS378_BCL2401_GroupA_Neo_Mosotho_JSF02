@@ -1,47 +1,125 @@
-# Svelte + Vite
+# SwiftCraft E-Commerce Application
 
-This template should help get you started developing with Svelte in Vite.
+## Description
 
-## Recommended IDE Setup
+SwiftCraft is a modern, responsive e-commerce web application built with Svelte. It showcases a catalog of products fetched from the Fake Store API, allowing users to browse, search, filter, and view detailed information about products.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Features
 
-## Need an official Svelte framework?
+- Display a grid of products with essential information
+- Filter products by category
+- Sort products by price (ascending and descending)
+- Search products by name
+- View detailed information about a specific product
+- Responsive design for mobile and desktop views
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Technology Stack
 
-## Technical considerations
+- Svelte: A modern JavaScript framework for building user interfaces
+- Svelte Routing: For handling client-side routing
+- Tailwind CSS: For styling and responsive design
+- Font Awesome: For icons
+- Fake Store API: For fetching product data
 
-**Why use this over SvelteKit?**
+## Project Structure
+Certainly! Here's a detailed README file for your project:
+markdownCopy# SwiftCraft E-Commerce Application
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Description
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+SwiftCraft is a modern, responsive e-commerce web application built with Svelte. It showcases a catalog of products fetched from the Fake Store API, allowing users to browse, search, filter, and view detailed information about products.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## Features
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+- Display a grid of products with essential information
+- Filter products by category
+- Sort products by price (ascending and descending)
+- Search products by name
+- View detailed information about a specific product
+- Responsive design for mobile and desktop views
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+## Technology Stack
 
-**Why include `.vscode/extensions.json`?**
+- Svelte: A modern JavaScript framework for building user interfaces
+- Svelte Routing: For handling client-side routing
+- Tailwind CSS: For styling and responsive design
+- Font Awesome: For icons
+- Fake Store API: For fetching product data
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Project Structure
+swiftcraft/
+│
+├── public/
+│   ├── index.html
+│   └── global.css
+│
+├── src/
+│   ├── components/
+│   │   ├── FilterSort.svelte
+│   │   ├── Navbar.svelte
+│   │   ├── ProductCard.svelte
+│   │   └── ProductGrid.svelte
+│   │
+│   ├── pages/
+│   │   ├── Home.svelte
+│   │   └── ProductDetails.svelte
+│   │
+│   ├── App.svelte
+│   ├── main.js
+│   └── api.js
+│
+├── package.json
+├── rollup.config.js
+└── README.md
 
-**Why enable `checkJs` in the JS template?**
+## Setup and Installation
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+1. Clone the repository:
+git clone https://github.com/neomosotho/NEOMOS378_BCL2401_GroupA_Neo_Mosotho_JSF02.git
 
-**Why is HMR not preserving my local component state?**
+2. Install dependencies:
+npm create vite@latest --template svelte
+npm install tailwindcss postcss autoprefixer
+npm install svelte-routing
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-brands-svg-icons
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+3. Start the development server:
+npm run dev
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+5. Open your browser and visit `http://localhost:5000`
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+## API Integration
+
+This project uses the Fake Store API to fetch product data. The API calls are centralized in the `src/api.js` file. If you want to replace it with a different API, you'll need to update the functions in this file.
+
+## Components
+
+### Navbar
+The top navigation bar of the application.
+
+### FilterSort
+Handles category filtering, price sorting, and product search functionality.
+
+### ProductGrid
+Displays the grid of product cards.
+
+### ProductCard
+Individual product card displaying essential product information.
+
+## Pages
+
+### Home
+The main page displaying the product grid with filtering and sorting options.
+
+### ProductDetails
+Detailed view of a single product.
+
+## Routing
+
+The application uses Svelte Routing for client-side navigation:
+- `/`: Home page with product grid
+- `/product/:id`: Individual product details page
+
+## Styling
+
+The project uses Tailwind CSS for styling. The main Tailwind configuration is in `tailwind.config.js`. Custom styles can be added in `public/global.css`.
