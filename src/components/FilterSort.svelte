@@ -23,6 +23,7 @@
       <div>
         <label for="sort" class="mr-2">Sort by:</label>
         <select id="sort" bind:value={sortOrder} on:change={() => dispatch('sortChange', sortOrder)}>
+          <option value="Default">Price: Default</option>
           <option value="asc">Price: Low to High</option>
           <option value="desc">Price: High to Low</option>
         </select>
