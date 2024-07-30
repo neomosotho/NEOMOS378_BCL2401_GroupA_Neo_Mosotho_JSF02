@@ -1,7 +1,7 @@
 <!-- src/pages/Home.svelte -->
 <script>
     import { onMount } from 'svelte';
-    import { fetchCategories, fetchProducts } from '../api.js';
+    import { fetchCategories, fetchProducts, fetchSingleProduct } from '../api.js';
     import ProductGrid from '../components/ProductGrid.svelte';
     import FilterSort from '../components/FilterSort.svelte';
     import ProductModal from '../components/ProductModal.svelte';
@@ -84,9 +84,9 @@
   />
   
   <ProductGrid
-    {loading}
-    {filteredProducts}
-    on:viewDetails={viewProductDetails}
+  {loading}
+  products={filteredProducts}
+  on:viewDetails={viewProductDetails}
   />
   
   {#if modalOpen}
